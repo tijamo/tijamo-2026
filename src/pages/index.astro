@@ -1,0 +1,291 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout>
+  <!-- NAV -->
+  <nav>
+    <div class="container nav-inner">
+      <a href="/" class="logo">Tijamo</a>
+      <ul>
+        <li><a href="#ux">User Experience</a></li>
+        <li><a href="#digital">Digital Optimisation</a></li>
+        <li><a href="#leadership">Design Leadership</a></li>
+        <li><a href="#contact" class="btn-nav">Say hello</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">UX · Digital · Design Leadership</p>
+      <h1>Hi, I'm Tim.<br/>I help create elegant<br/>online experiences.</h1>
+      <p class="sub">I'm currently working on large-scale SaaS products for world-class clients in the areas of finance, manufacturing and life sciences.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn-primary">Say hello</a>
+        <a href="/cv.pdf" class="btn-outline">Download my CV</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section class="proof">
+    <div class="container">
+      <div class="proof-stat">
+        <span class="stat-num">20+</span>
+        <span class="stat-label">Years experience in development and design</span>
+      </div>
+      <div class="proof-divider"></div>
+      <div class="proof-right">
+        <p class="proof-sub">Helping brands large and small succeed digitally and in product</p>
+        <div class="clients">
+          <span>WHO</span>
+          <span>NASA</span>
+          <span>NHS</span>
+          <span>FlyBMI</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <p class="section-label">What I do</p>
+      <h2>How I make a difference</h2>
+
+      <div class="service-grid">
+        <div class="service-card" id="ux">
+          <div class="service-num">01</div>
+          <h3>User Experience</h3>
+          <p class="service-quote">"The user is our most important asset"</p>
+          <p>Designing an experience that is tailored to specific personas is only possible with user engagement. I have led the design and implementation of premium bespoke user interfaces used by some of the world's largest brands, providing usable and accessible solutions.</p>
+          <a href="#contact" class="service-link">My UX and UI experience →</a>
+        </div>
+
+        <div class="service-card" id="digital">
+          <div class="service-num">02</div>
+          <h3>Digital Optimisation</h3>
+          <p class="service-quote">"From audiophiles to airlines, all businesses need happy customers"</p>
+          <p>Applying 20 years of experience in building and optimising eCommerce platforms of all shapes and sizes, I have helped enable many brands to grow their customer base.</p>
+          <a href="#contact" class="service-link">My digital optimisation experience →</a>
+        </div>
+
+        <div class="service-card" id="leadership">
+          <div class="service-num">03</div>
+          <h3>Design Leadership</h3>
+          <p class="service-quote">"Getting products designed, at scale."</p>
+          <p>Designing alone can be efficient and fun. Scaling up to handle enterprise-level projects has led me to the application of DesignOps and leadership techniques.</p>
+          <a href="#contact" class="service-link">My leadership experience →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="container">
+      <p class="section-label">Kind words</p>
+      <h2>Some words from people I have worked with</h2>
+
+      <div class="testimonial-grid">
+        <blockquote>
+          <p>"Tim is a pleasure to work with. Smart, insightful, great eye for detail and he's one of those guys that really rolls up their sleeves and just gets things done. Tim helped us launch a great new website & e-commerce platform on plan and within budget, and he did it all with a big smile on his face. I would have no hesitation in recommending or working with Tim again."</p>
+          <footer>
+            <strong>Antony Price</strong>
+            <span>Head of Flight Supply Strategy, Agoda</span>
+          </footer>
+        </blockquote>
+
+        <blockquote>
+          <p>"Tim opened the door for me into the design world where he gave me all the tools, knowledge, support & opportunities that I needed to progress in my career. He cares as much about the success of his team just as much as he cares about the success of a project. Aside from being a brilliant designer & manager, Tim was an absolute pleasure to work with."</p>
+          <footer>
+            <strong>Corin Pye</strong>
+            <span>Product Designer, We Are Wildgoose</span>
+          </footer>
+        </blockquote>
+
+        <blockquote>
+          <p>"Tim took me on as an apprentice and supported my growth into an experienced UX designer by giving me the guidance and patience I needed. His inclusivity and accessibility-focused approach to user experience design is something every business needs."</p>
+          <footer>
+            <strong>Molly Rice UXC</strong>
+            <span>UX/UI Designer, Remote</span>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <p class="section-label">Get in touch</p>
+      <h2>Let's say hello!</h2>
+      <p class="contact-sub">I'd love to speak to you and find out how I can help. If you would like more information about my skillset and availability, please contact me using this form.</p>
+
+      <form class="contact-form" name="contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact" />
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <label class="checkbox-label">
+          <input type="checkbox" name="consent" required />
+          I understand that this form is storing my submitted information so I can be contacted.
+        </label>
+        <button type="submit" class="btn-primary">Send message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <a href="/" class="logo">Tijamo</a>
+        <p>© {new Date().getFullYear()} Tijamo. All rights reserved.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#contact">Say hello</a>
+        <a href="/cv.pdf">Download my CV</a>
+        <a href="/privacy">Privacy Policy</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://twitter.com/tijamodesign" target="_blank" rel="noopener">Twitter</a>
+        <a href="https://linkedin.com/in/tijamo" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(250,250,250,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 1.1rem; padding-bottom: 1.1rem;
+  }
+  .logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; }
+  nav ul { list-style: none; display: flex; gap: 2rem; align-items: center; }
+  nav ul a { font-size: 0.9rem; color: var(--muted); transition: color 0.2s; }
+  nav ul a:hover { color: var(--black); }
+  .btn-nav {
+    background: var(--black); color: var(--white) !important;
+    padding: 0.5rem 1.2rem; border-radius: 2rem;
+    font-size: 0.85rem !important; transition: background 0.2s !important;
+  }
+  .btn-nav:hover { background: var(--accent) !important; }
+
+  .hero { padding: 7rem 0 6rem; background: linear-gradient(135deg, #f9f7f4 0%, #fafafa 100%); }
+  .eyebrow {
+    font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--accent); font-weight: 500; margin-bottom: 1.5rem;
+  }
+  .hero h1 { font-size: clamp(2.8rem, 6vw, 5rem); margin-bottom: 1.5rem; }
+  .sub { font-size: 1.1rem; color: var(--muted); max-width: 560px; margin-bottom: 2.5rem; }
+  .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--black); color: var(--white);
+    padding: 0.85rem 2rem; border-radius: 2rem;
+    font-size: 0.95rem; font-weight: 500; transition: background 0.2s;
+    border: none; cursor: pointer; display: inline-block;
+  }
+  .btn-primary:hover { background: var(--accent); }
+  .btn-outline {
+    border: 1.5px solid var(--black); color: var(--black);
+    padding: 0.85rem 2rem; border-radius: 2rem;
+    font-size: 0.95rem; font-weight: 500; transition: all 0.2s; display: inline-block;
+  }
+  .btn-outline:hover { background: var(--black); color: var(--white); }
+
+  .proof { padding: 5rem 0; background: var(--black); color: var(--white); }
+  .proof .container { display: flex; align-items: center; gap: 3rem; flex-wrap: wrap; }
+  .proof-stat { display: flex; flex-direction: column; min-width: 180px; }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 4rem; line-height: 1; color: var(--accent); }
+  .stat-label { font-size: 0.9rem; color: #aaa; margin-top: 0.5rem; max-width: 180px; }
+  .proof-divider { width: 1px; height: 80px; background: #333; }
+  .proof-right { display: flex; flex-direction: column; gap: 1.5rem; }
+  .proof-sub { font-size: 1.1rem; max-width: 320px; }
+  .clients { display: flex; gap: 2.5rem; flex-wrap: wrap; }
+  .clients span { font-size: 0.85rem; letter-spacing: 0.1em; color: #555; text-transform: uppercase; }
+
+  .services { padding: 7rem 0; }
+  .section-label {
+    font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--accent); font-weight: 500; margin-bottom: 0.75rem;
+  }
+  .services h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 4rem; }
+  .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+  .service-card {
+    border: 1px solid var(--border); border-radius: 12px;
+    padding: 2.5rem; transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .service-card:hover { border-color: var(--accent); box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+  .service-num { font-size: 0.75rem; color: var(--accent); font-weight: 600; margin-bottom: 1rem; letter-spacing: 0.1em; }
+  .service-card h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+  .service-quote { font-style: italic; color: var(--muted); margin-bottom: 1rem; font-size: 0.95rem; }
+  .service-card p { color: var(--muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
+  .service-link { font-size: 0.85rem; font-weight: 500; color: var(--accent); }
+  .service-link:hover { text-decoration: underline; }
+
+  .testimonials { padding: 7rem 0; background: #f5f3f0; }
+  .testimonials h2 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); margin-bottom: 3.5rem; }
+  .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+  blockquote {
+    background: var(--white); border-radius: 12px; padding: 2rem;
+    display: flex; flex-direction: column; gap: 1.5rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  }
+  blockquote p { font-size: 0.95rem; color: var(--muted); line-height: 1.7; }
+  blockquote footer { border-top: 1px solid var(--border); padding-top: 1rem; }
+  blockquote strong { display: block; font-size: 0.95rem; }
+  blockquote span { font-size: 0.8rem; color: var(--muted); }
+
+  .contact { padding: 7rem 0; }
+  .contact h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; }
+  .contact-sub { color: var(--muted); max-width: 560px; margin-bottom: 3rem; }
+  .contact-form { max-width: 640px; display: flex; flex-direction: column; gap: 1.25rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+  label { font-size: 0.85rem; font-weight: 500; }
+  input, textarea {
+    border: 1.5px solid var(--border); border-radius: 8px;
+    padding: 0.75rem 1rem; font-size: 0.95rem; font-family: inherit;
+    background: var(--white); transition: border-color 0.2s;
+  }
+  input:focus, textarea:focus { outline: none; border-color: var(--black); }
+  textarea { resize: vertical; }
+  .checkbox-label { display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.85rem; color: var(--muted); cursor: pointer; }
+  .checkbox-label input { width: auto; margin-top: 2px; }
+
+  footer { background: var(--black); color: var(--white); padding: 3rem 0; }
+  .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+  .footer-left { display: flex; flex-direction: column; gap: 0.4rem; }
+  .footer-left .logo { color: var(--white); }
+  .footer-left p { font-size: 0.8rem; color: #666; }
+  .footer-links, .footer-social { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  .footer-links a, .footer-social a { font-size: 0.85rem; color: #aaa; transition: color 0.2s; }
+  .footer-links a:hover, .footer-social a:hover { color: var(--white); }
+
+  @media (max-width: 768px) {
+    nav ul { display: none; }
+    .proof .container { flex-direction: column; align-items: flex-start; gap: 2rem; }
+    .proof-divider { display: none; }
+    .form-row { grid-template-columns: 1fr; }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+  }
+</style>
