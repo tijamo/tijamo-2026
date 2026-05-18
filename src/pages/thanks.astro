@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Thanks — Tijamo">
+  <main class="thanks">
+    <div class="container">
+      <p class="eyebrow">Got it</p>
+      <h1>Thanks — your&nbsp;message is&nbsp;on&nbsp;its&nbsp;way.</h1>
+      <p class="sub">I read every message personally and usually reply within a day or two. If it's urgent, drop me a line directly:</p>
+      <ul class="contact-quick">
+        <li><a href="mailto:tim@tijamo.com"><span aria-hidden="true">✉</span> tim@tijamo.com</a></li>
+        <li><a href="https://linkedin.com/in/tijamo" target="_blank" rel="noopener"><span aria-hidden="true">in</span> LinkedIn</a></li>
+      </ul>
+      <p class="back"><a href="/">← Back to home</a></p>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .thanks {
+    min-height: 70vh; display: flex; align-items: center;
+    padding: 6rem 0; background: var(--bg-light);
+  }
+  .eyebrow {
+    font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--red); font-weight: 500; margin-bottom: 1.5rem;
+  }
+  h1 { font-size: clamp(2rem, 5vw, 3.4rem); color: var(--black); margin-bottom: 1.5rem; max-width: 720px; }
+  .sub { color: var(--muted); font-size: 1.05rem; margin-bottom: 2rem; max-width: 560px; line-height: 1.7; }
+  .contact-quick { list-style: none; display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; padding: 0; }
+  .contact-quick a {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.7rem 1.25rem; background: var(--surface);
+    border: 1px solid var(--border); border-radius: 2rem;
+    font-size: 0.88rem; color: var(--black); font-weight: 500;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .contact-quick a:hover { border-color: var(--red); color: var(--red); }
+  .contact-quick a span { color: var(--red); font-weight: 700; }
+  .back a { color: var(--muted); font-size: 0.9rem; }
+  .back a:hover { color: var(--red); }
+</style>

@@ -9,11 +9,23 @@ const { title = "Tijamo — Tim | UX, Digital & Design Leadership" } = Astro.pro
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Tim helps create elegant online experiences. 20+ years in UX, digital optimisation and design leadership." />
+    <meta name="description" content="Tim helps create elegant online experiences. 25 years in UX, digital optimisation and design leadership." />
     <title>{title}</title>
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#13171a" media="(prefers-color-scheme: dark)" />
+    <script is:inline>
+      // Set theme before paint to avoid FOUC. Respects saved preference, then OS preference.
+      (function() {
+        try {
+          const stored = localStorage.getItem('theme');
+          const dark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (dark) document.documentElement.setAttribute('data-theme', 'dark');
+        } catch (e) {}
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
   </head>
   <body>
     <slot />
@@ -24,25 +36,51 @@ const { title = "Tijamo — Tim | UX, Digital & Design Leadership" } = Astro.pro
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --black: #0f0f0f;
-    --white: #fafafa;
-    --accent: #c8a96e;
-    --muted: #666;
-    --border: #e5e5e5;
-    --max: 1100px;
+    --black: #2c343c;
+    --dark: #45515e;
+    --red: #A71212;
+    --red-dark: #8a0e0e;
+    --white: #ffffff;
+    --muted: #5d6b7a;
+    --muted-light: #b8c2cc;
+    --border: #eceef1;
+    --bg-light: #f7f8f9;
+    --surface: #ffffff;       /* card / elevated bg */
+    --surface-dark: #2c343c;  /* always-dark sections (footer, pullquote) */
+    --on-dark: #f0f2f4;       /* light text used on red/dark surfaces */
+    --shadow: rgba(44,52,60,.1);
+    --max: 1170px;
+    color-scheme: light;
+  }
+
+  [data-theme="dark"] {
+    --black: #e8eaed;
+    --dark: #c0cad4;
+    --red: #e04848;
+    --red-dark: #b53535;
+    --white: #13171a;
+    --muted: #a8b3bf;
+    --muted-light: #6c7886;
+    --border: #2c343c;
+    --bg-light: #1b2025;
+    --surface: #1f262d;
+    --surface-dark: #050709;
+    --on-dark: #f0f2f4;
+    --shadow: rgba(0,0,0,.5);
+    color-scheme: dark;
   }
 
   html { scroll-behavior: smooth; }
 
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', 'Helvetica Neue', Helvetica, sans-serif;
     background: var(--white);
     color: var(--black);
-    line-height: 1.6;
+    line-height: 1.666;
     font-size: 16px;
   }
 
-  h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.2; }
+  h1, h2, h3 { font-family: 'IBM Plex Serif', Georgia, serif; line-height: 1.2; }
 
   a { color: inherit; text-decoration: none; }
 

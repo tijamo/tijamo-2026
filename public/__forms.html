@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8" /><title>Netlify form registration</title></head>
+<body>
+  <!-- This file exists only so Netlify's form parser detects the contact form at deploy time.
+       The real form lives in src/pages/index.astro. Do not link to or display this page. -->
+  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks">
+    <input type="hidden" name="form-name" value="contact" />
+    <p hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <textarea name="message"></textarea>
+    <button type="submit">Send</button>
+  </form>
+</body>
+</html>
