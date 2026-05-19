@@ -78,7 +78,7 @@ import Layout from '../layouts/Layout.astro';
           <span>NASA</span>
           <span>NHS</span>
           <span>Agoda</span>
-          <span>FlyBMI</span>
+          <img src="/clients/flybmi.svg" alt="flybmi" class="client-logo" />
         </div>
       </div>
     </section>
@@ -399,6 +399,9 @@ import Layout from '../layouts/Layout.astro';
   .strip-label { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.25rem; }
   .clients { display: flex; gap: 3rem; flex-wrap: wrap; align-items: center; }
   .clients span { font-size: 0.95rem; letter-spacing: 0.05em; color: var(--dark); text-transform: uppercase; font-weight: 600; }
+  .client-logo { height: 28px; width: auto; display: block; opacity: 0.85; transition: opacity 0.2s; }
+  .client-logo:hover { opacity: 1; }
+  [data-theme="dark"] .client-logo { filter: brightness(1.15); }
 
   /* SECTION LABELS */
   .section-label {
