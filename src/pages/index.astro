@@ -153,13 +153,14 @@ import Layout from '../layouts/Layout.astro';
           </article>
 
           <article class="case-card">
+            <img src="/clients/flybmi.svg" alt="flybmi" class="case-logo" height="36" />
             <div class="case-meta">
-              <span class="case-tag">Leadership · SaaS</span>
-              <span class="case-year">Ongoing</span>
+              <span class="case-tag">UX · Aviation</span>
+              <span class="case-year">2018</span>
             </div>
-            <h3>Enterprise SaaS — design team scale-up</h3>
-            <p class="case-result">Built design rituals, hiring frameworks and a junior-to-senior progression path. Team grew from [X] to [Y] in [Z] months.</p>
-            <p class="case-role">Role: design leadership across multi-product team.</p>
+            <h3>flybmi — booking platform redesign</h3>
+            <p class="case-result">Modernised the booking experience for the British regional airline: a hero flight-search front door, a flexible promotions module to surface seasonal European routes from Bristol, East Midlands and beyond, and a fully responsive site across desktop and mobile.</p>
+            <p class="case-role">Role: lead UX and design, with the airline's in-house digital team. flybmi ceased trading in Feb 2019.</p>
           </article>
         </div>
       </div>
@@ -441,6 +442,8 @@ import Layout from '../layouts/Layout.astro';
     padding: 2rem; transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   .case-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px var(--shadow); }
+  .case-logo { height: 36px; width: auto; margin-bottom: 1.25rem; display: block; }
+  [data-theme="dark"] .case-logo { filter: brightness(1.15); }
   .case-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; }
   .case-tag { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--red); font-weight: 600; }
   .case-year { font-size: 0.75rem; color: var(--muted); }
