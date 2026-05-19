@@ -168,7 +168,7 @@ import Layout from '../layouts/Layout.astro';
           <figure class="t-card">
             <p class="t-theme">On craft</p>
             <div class="t-person">
-              <span class="avatar" aria-hidden="true">AP</span>
+              <img src="/testimonials/antony.png" alt="" class="avatar avatar-photo" width="44" height="44" loading="lazy" aria-hidden="true" />
               <div>
                 <strong>Antony Price</strong>
                 <span>CEO, Fly Arna (formerly Agoda)</span>
@@ -180,7 +180,7 @@ import Layout from '../layouts/Layout.astro';
           <figure class="t-card">
             <p class="t-theme">On mentorship</p>
             <div class="t-person">
-              <span class="avatar" aria-hidden="true">CP</span>
+              <img src="/testimonials/corin.jpg" alt="" class="avatar avatar-photo" width="44" height="44" loading="lazy" aria-hidden="true" />
               <div>
                 <strong>Corin Pye</strong>
                 <span>Product Designer, Purplebricks</span>
@@ -192,7 +192,7 @@ import Layout from '../layouts/Layout.astro';
           <figure class="t-card">
             <p class="t-theme">On leadership</p>
             <div class="t-person">
-              <span class="avatar" aria-hidden="true">MR</span>
+              <img src="/testimonials/molly.jpg" alt="" class="avatar avatar-photo" width="44" height="44" loading="lazy" aria-hidden="true" />
               <div>
                 <strong>Molly Rice UXC</strong>
                 <span>Senior UI/UX Designer, Remote New Media</span>
@@ -470,6 +470,13 @@ import Layout from '../layouts/Layout.astro';
     font-weight: 600; font-size: 0.85rem; letter-spacing: 0.05em;
     flex-shrink: 0;
   }
+  .avatar-photo {
+    object-fit: cover; object-position: center top;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  /* Corin's photo is a side-profile — anchor higher and to the right of centre */
+  .t-card:nth-child(2) .avatar-photo { object-position: 65% 25%; }
   .t-person strong { display: block; font-size: 0.92rem; color: var(--black); font-weight: 600; }
   .t-person span { font-size: 0.78rem; color: var(--muted); }
   .t-card blockquote { font-size: 0.92rem; color: var(--muted); line-height: 1.75; font-style: italic; }
