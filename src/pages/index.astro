@@ -341,7 +341,7 @@ import Layout from '../layouts/Layout.astro';
   .hero-grid {
     display: grid;
     grid-template-columns: 1.4fr 1fr;
-    gap: 4rem; align-items: center;
+    gap: 4rem; align-items: start;
   }
   .eyebrow {
     font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase;
@@ -366,7 +366,8 @@ import Layout from '../layouts/Layout.astro';
   .stat-num { font-family: 'IBM Plex Serif', Georgia, serif; font-size: 3rem; line-height: 1; color: var(--red); }
   .stat-label { font-size: 0.85rem; color: var(--muted); }
 
-  .hero-portrait { display: flex; justify-content: center; }
+  /* Drop the portrait down past the eyebrow line so its top aligns with the h1 */
+  .hero-portrait { display: flex; justify-content: center; margin-top: 2.8rem; }
   .portrait {
     width: 320px; height: 320px; border-radius: 50%;
     object-fit: cover; object-position: center top;
@@ -524,7 +525,7 @@ import Layout from '../layouts/Layout.astro';
   /* MOBILE */
   @media (max-width: 860px) {
     .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-    .hero-portrait { order: -1; }
+    .hero-portrait { order: -1; margin-top: 0; }
     .portrait { width: 200px; height: 200px; }
     .about-grid { grid-template-columns: 1fr; gap: 1rem; }
   }
