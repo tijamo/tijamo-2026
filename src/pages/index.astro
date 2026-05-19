@@ -293,11 +293,11 @@ import Layout from '../layouts/Layout.astro';
   }
   .nav-inner {
     display: flex; align-items: center; justify-content: space-between;
-    min-height: 48px;
-    padding-top: 0; padding-bottom: 0;
+    padding-top: 0.75rem; padding-bottom: 0.75rem;
   }
-  .logo { align-self: stretch; display: flex; align-items: center; }
-  .logo img { height: 100%; width: auto; display: block; }
+  .logo { display: flex; align-items: center; }
+  nav .logo img { height: 32px; width: auto; display: block; }
+  .logo-footer { height: 28px; width: auto; }
   .nav-list { list-style: none; display: flex; gap: 2rem; align-items: center; }
   .nav-list a { font-size: 0.88rem; color: var(--black); transition: color 0.2s; font-weight: 400; background: transparent; }
   .nav-list a:hover { color: var(--red); text-decoration: underline; text-underline-offset: 4px; }
