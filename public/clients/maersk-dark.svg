@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 100" role="img" aria-label="Maersk">
   <rect x="0" y="0" width="100" height="100" rx="14" fill="#42B0D5"/>
   <polygon fill="#ffffff" points="50,12 56.6,36.31 79.71,26.31 64.82,46.62 87.05,58.46 61.88,59.48 66.49,84.23 50,65.2 33.51,84.23 38.12,59.48 12.95,58.46 35.18,46.62 20.29,26.31 43.41,36.31"/>
-  <text x="120" y="72" font-family="'Arial Black','Arial Bold',Arial,sans-serif" font-weight="900" font-size="60" letter-spacing="1" fill="#000000">MAERSK</text>
+  <text x="120" y="72" font-family="'Arial Black','Arial Bold',Arial,sans-serif" font-weight="900" font-size="60" letter-spacing="1" fill="#ffffff">MAERSK</text>
 </svg>
