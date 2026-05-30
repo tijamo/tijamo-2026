@@ -132,8 +132,8 @@ import Layout from '../layouts/Layout.astro';
 
         <div class="case-grid">
           <article class="case-card">
-            <img src="/clients/oneocean.svg" alt="OneOcean" class="case-logo logo-light" height="36" />
-            <img src="/clients/oneocean-dark.svg" alt="" class="case-logo logo-dark" height="36" aria-hidden="true" />
+            <img src="/clients/oneocean.svg" alt="OneOcean" class="case-logo case-logo-light" height="36" />
+            <img src="/clients/oneocean-dark.svg" alt="" class="case-logo case-logo-dark" height="36" aria-hidden="true" />
             <div class="case-meta">
               <span class="case-tag">UX Research · eLearning · Design Leadership</span>
               <span class="case-year">2022–2026</span>
@@ -144,8 +144,8 @@ import Layout from '../layouts/Layout.astro';
           </article>
 
           <article class="case-card">
-            <img src="/clients/ideagen.svg" alt="Ideagen" class="case-logo logo-light" height="36" />
-            <img src="/clients/ideagen-dark.svg" alt="" class="case-logo logo-dark" height="36" aria-hidden="true" />
+            <img src="/clients/ideagen.svg" alt="Ideagen" class="case-logo case-logo-light" height="36" />
+            <img src="/clients/ideagen-dark.svg" alt="" class="case-logo case-logo-dark" height="36" aria-hidden="true" />
             <div class="case-meta">
               <span class="case-tag">Design Systems · SaaS</span>
               <span class="case-year">2022</span>
@@ -460,9 +460,9 @@ import Layout from '../layouts/Layout.astro';
   .case-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px var(--shadow); }
   .case-logo { height: 36px; width: auto; margin-bottom: 1.25rem; display: block; }
   [data-theme="dark"] .case-logo { filter: brightness(1.15); }
-  .case-logo.logo-dark { display: none; }
-  [data-theme="dark"] .case-logo.logo-light { display: none; }
-  [data-theme="dark"] .case-logo.logo-dark { display: block; filter: none; }
+  .case-logo-dark { display: none; }
+  [data-theme="dark"] .case-logo-light { display: none; }
+  [data-theme="dark"] .case-logo-dark { display: block; filter: none; }
   .case-result a { color: var(--red); border-bottom: 1px solid currentColor; padding-bottom: 1px; }
   .case-result a:hover { color: var(--red-dark); }
   .case-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; }
