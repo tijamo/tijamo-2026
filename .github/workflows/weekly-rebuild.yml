@@ -1,0 +1,12 @@
+name: Weekly rebuild
+
+on:
+  schedule:
+    - cron: '0 8 * * 4'   # Thursdays at 08:00 UTC
+
+jobs:
+  trigger-netlify-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Netlify build hook
+        run: curl -s -X POST "${{ secrets.NETLIFY_BUILD_HOOK_URL }}"
