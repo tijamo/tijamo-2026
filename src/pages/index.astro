@@ -75,13 +75,11 @@ try {
 
     <!-- ABOUT -->
     <section class="about" id="about">
-      <div class="container about-grid">
+      <div class="container">
         <p class="section-label">About</p>
-        <div>
-          <h2>A senior design leader who builds teams and ships product.</h2>
-          <p>I've spent 25 years across agency and in-house, leading UX teams that ship at enterprise scale — from premium bespoke interfaces for global brands to ecommerce platforms doing serious volume. My focus today: DesignOps, hiring frameworks, and the rituals that make design teams reliably ship.</p>
-          <p class="about-meta"><strong>Currently:</strong> design leadership in SaaS. <strong>Previously:</strong> agency and in-house roles spanning finance, manufacturing, life&nbsp;sciences, and travel.</p>
-        </div>
+        <h2>A senior design leader who builds teams and ships product.</h2>
+        <p>I've spent 25 years across agency and in-house, leading UX teams that ship at enterprise scale — from premium bespoke interfaces for global brands to ecommerce platforms doing serious volume. My focus today: DesignOps, hiring frameworks, and the rituals that make design teams reliably ship.</p>
+        <p class="about-meta"><strong>Currently:</strong> design leadership in SaaS. <strong>Previously:</strong> agency and in-house roles spanning finance, manufacturing, life&nbsp;sciences, and travel.</p>
       </div>
     </section>
 
@@ -457,11 +455,8 @@ try {
 
   /* ABOUT */
   .about { padding: 6rem 0; }
-  .about-grid {
-    display: grid; grid-template-columns: 200px 1fr; gap: 3rem; align-items: start;
-  }
-  .about-grid h2 { font-size: clamp(1.8rem, 3vw, 2.3rem); color: var(--black); margin-bottom: 1.25rem; }
-  .about-grid p { color: var(--muted); line-height: 1.75; margin-bottom: 1rem; max-width: 680px; }
+  .about h2 { font-size: clamp(2rem, 4vw, 2.8rem); color: var(--black); margin-bottom: 1.5rem; max-width: 760px; }
+  .about p { color: var(--muted); line-height: 1.75; margin-bottom: 1rem; max-width: 680px; }
   .about-meta { font-size: 0.95rem; }
   .about-meta strong { color: var(--black); font-weight: 500; }
 
@@ -633,7 +628,6 @@ try {
     .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     .hero-portrait { order: -1; margin-top: 0; }
     .portrait { width: 200px; height: 200px; }
-    .about-grid { grid-template-columns: 1fr; gap: 1rem; }
   }
   @media (max-width: 768px) {
     .nav-burger { display: block; }
