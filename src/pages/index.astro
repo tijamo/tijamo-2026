@@ -1,6 +1,32 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+// Client logos for the scrolling marquee. Variant pairs share an `alt`;
+// `light`/`dark` controls which shows per theme (the hidden one drops out
+// of the a11y tree, so no double-reading and both themes get a name).
+const clientLogos = [
+  { src: 'who.svg', alt: 'World Health Organization' },
+  { src: 'nasa.svg', alt: 'NASA' },
+  { src: 'nhs.svg', alt: 'NHS' },
+  { src: 'ideagen.svg', alt: 'Ideagen', variant: 'light' },
+  { src: 'ideagen-dark.svg', alt: 'Ideagen', variant: 'dark' },
+  { src: 'lr.svg', alt: "Lloyd's Register", variant: 'light' },
+  { src: 'lr-dark.svg', alt: "Lloyd's Register", variant: 'dark' },
+  { src: 'oneocean.svg', alt: 'OneOcean', variant: 'light' },
+  { src: 'oneocean-dark.svg', alt: 'OneOcean', variant: 'dark' },
+  { src: 'pera.png', alt: 'Pera International', extra: 'client-logo-pera' },
+  { src: 'maersk.svg', alt: 'Maersk', variant: 'light' },
+  { src: 'maersk-dark.svg', alt: 'Maersk', variant: 'dark' },
+  { src: 'royal-caribbean.svg', alt: 'Royal Caribbean', variant: 'light' },
+  { src: 'royal-caribbean-dark.svg', alt: 'Royal Caribbean', variant: 'dark' },
+  { src: 'flybmi.svg', alt: 'flybmi' },
+];
+const logoClass = (l: { variant?: string; extra?: string }) =>
+  ['client-logo', l.variant ? `client-logo-${l.variant}` : '', l.extra ?? ''].filter(Boolean).join(' ');
+// 4 copies so half the track (translateX -50%) always exceeds the viewport,
+// keeping the loop seamless on wide/full-bleed screens.
+const MARQUEE_COPIES = 4;
+
 let latestPost: { title: string; link: string; date: string; excerpt: string; image: string } | null = null;
 try {
   const res = await fetch('https://tijamo.substack.com/feed');
@@ -86,24 +112,17 @@ try {
     <!-- CLIENTS -->
     <section class="clients-strip">
       <div class="container">
-        <p class="strip-label">Selected clients I've worked with</p>
-        <!-- TODO: replace text with brand SVG logos in public/clients/ for richer presentation -->
-        <div class="clients">
-          <img src="/clients/who.svg" alt="World Health Organization" class="client-logo" />
-          <img src="/clients/nasa.svg" alt="NASA" class="client-logo" />
-          <img src="/clients/nhs.svg" alt="NHS" class="client-logo" />
-          <img src="/clients/ideagen.svg" alt="Ideagen" class="client-logo client-logo-light" />
-          <img src="/clients/ideagen-dark.svg" alt="" class="client-logo client-logo-dark" aria-hidden="true" />
-          <img src="/clients/lr.svg" alt="Lloyd's Register" class="client-logo client-logo-light" />
-          <img src="/clients/lr-dark.svg" alt="" class="client-logo client-logo-dark" aria-hidden="true" />
-          <img src="/clients/oneocean.svg" alt="OneOcean" class="client-logo client-logo-light" />
-          <img src="/clients/oneocean-dark.svg" alt="" class="client-logo client-logo-dark" aria-hidden="true" />
-          <img src="/clients/pera.png" alt="Pera International" class="client-logo client-logo-pera" />
-          <img src="/clients/maersk.svg" alt="Maersk" class="client-logo client-logo-light" />
-          <img src="/clients/maersk-dark.svg" alt="" class="client-logo client-logo-dark" aria-hidden="true" />
-          <img src="/clients/royal-caribbean.svg" alt="Royal Caribbean" class="client-logo client-logo-light" />
-          <img src="/clients/royal-caribbean-dark.svg" alt="" class="client-logo client-logo-dark" aria-hidden="true" />
-          <img src="/clients/flybmi.svg" alt="flybmi" class="client-logo" />
+        <p class="strip-label">Some organisations I've worked with</p>
+      </div>
+      <div class="marquee">
+        <div class="marquee-track">
+          {Array.from({ length: MARQUEE_COPIES }).map((_, copy) => (
+            <div class="marquee-group" aria-hidden={copy === 0 ? undefined : 'true'}>
+              {clientLogos.map((l) => (
+                <img src={`/clients/${l.src}`} alt={copy === 0 ? l.alt : ''} class={logoClass(l)} />
+              ))}
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -461,11 +480,23 @@ try {
   .about-meta strong { color: var(--black); font-weight: 500; }
 
   /* CLIENTS STRIP */
-  .clients-strip { padding: 2.5rem 0; background: var(--bg-light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-  .strip-label { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.25rem; }
-  .clients { display: flex; gap: 3rem; flex-wrap: wrap; align-items: center; }
-  .clients span { font-size: 0.95rem; letter-spacing: 0.05em; color: var(--dark); text-transform: uppercase; font-weight: 600; }
-  .client-logo { height: 28px; width: auto; display: block; opacity: 0.85; transition: opacity 0.2s; }
+  .clients-strip { padding: 2.5rem 0; background: var(--bg-light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); overflow: hidden; }
+  .strip-label { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red); font-weight: 600; margin-bottom: 1.5rem; }
+
+  /* Continuous right-to-left marquee */
+  .marquee {
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+            mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+  }
+  .marquee-track { display: flex; width: max-content; animation: marquee-scroll 60s linear infinite; }
+  .marquee:hover .marquee-track { animation-play-state: paused; }
+  .marquee-group { display: flex; align-items: center; gap: 3rem; padding-left: 3rem; }
+  @keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .client-logo { height: 28px; width: auto; display: block; opacity: 0.85; transition: opacity 0.2s; flex-shrink: 0; }
   .client-logo:hover { opacity: 1; }
   :global([data-theme="dark"]) .client-logo { filter: brightness(1.15); }
   .client-logo-dark { display: none; }
@@ -665,6 +696,11 @@ try {
     .service-card:hover, .case-card:hover, .contact-quick a:hover {
       transform: none;
     }
+    /* Marquee falls back to a static, wrapped, centred row */
+    .marquee { -webkit-mask-image: none; mask-image: none; }
+    .marquee-track { width: auto; animation: none; transform: none; justify-content: center; }
+    .marquee-group { flex-wrap: wrap; justify-content: center; padding-left: 0; row-gap: 1.5rem; }
+    .marquee-group[aria-hidden="true"] { display: none; }
   }
 </style>
 
